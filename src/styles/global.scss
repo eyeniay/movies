@@ -37,5 +37,21 @@ body {
   .content {
     margin: 24px;
     padding: 8px;
+
+    .movie-card {
+      .col {
+        overflow: auto;
+
+        .poster {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      .ant-table-row {
+        cursor: pointer;
+      }
+    }
   }
 }
