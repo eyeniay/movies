@@ -4,7 +4,7 @@ import { Layout } from "antd";
 const AppLayout: React.FC<any> = ({ children }) => {
   return (
     <Layout className="movies-layout">
-      <Layout.Header className="header">Movies</Layout.Header>
+      <Layout.Header className="header">todo</Layout.Header>
       <Layout.Content className="content">{children}</Layout.Content>
     </Layout>
   );

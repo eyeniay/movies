@@ -1,20 +1,19 @@
-import useTranslate from "hooks/useTranslate";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "layouts";
 import React from "react";
 import { Paths } from "utils/constants";
+import { Spin } from "antd";
 import "styles/global.scss";
 
 const LazyMovies = React.lazy(() => import("pages/movies"));
+const LazyNotFound = React.lazy(() => import("pages/404"));
 
 function App() {
-  const { locale } = useTranslate();
-
   const AppLayouts = () => {
     return (
       <AppLayout>
         <Routes>
-          <Route path="*" element={<div>{locale("NoFoundText")}</div>} />
+          <Route path="*" element={<LazyNotFound />} />
           <Route
             path={Paths.Home}
             element={<Navigate to={Paths.Movies} replace />}
@@ -28,7 +27,7 @@ function App() {
   };
 
   return (
-    <React.Suspense fallback={<p>{locale("Loading")}</p>}>
+    <React.Suspense fallback={<Spin />}>
       <AppLayouts />
     </React.Suspense>
   );
