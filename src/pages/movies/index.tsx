@@ -1,20 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import { Card, Col, Row, Spin, Table } from "antd";
-import moviesAPI, { IMovieFilter } from "api/Movies";
+import { Table } from "antd";
+import moviesAPI, { IMovie, IMovieFilter } from "api/Movies";
 import useTranslate from "hooks/useTranslate";
 import useUrlParams from "hooks/useUrlParams";
-import { lazy, Suspense } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Paths } from "utils/constants";
+import { useLocation, useNavigate } from "react-router-dom";
+import { DEFAULT_SEARCH_KEY, PaginationDefaults, Paths } from "utils/constants";
 
-const MovieDetailsPage = lazy(() => import("./details"));
 const MoviesPage = () => {
-  const { id } = useParams();
   const { locale } = useTranslate();
   const navigate = useNavigate();
   const location = useLocation();
   const { values, update } = useUrlParams<IMovieFilter>({
-    s: "Pokemon",
+    s: DEFAULT_SEARCH_KEY,
   });
   const columns: any = [
     {
@@ -40,52 +37,43 @@ const MoviesPage = () => {
       }),
   });
 
+  const handlePaginationChange = (p: any) =>
+    update({
+      ...values,
+      page: p.current,
+    });
+
+  const handleRowClick = (record: IMovie) => {
+    return {
+      onClick: () =>
+        navigate({
+          pathname: Paths.MoviesDetail.replace(":id", record?.imdbID),
+          search: location.search,
+        }),
+    };
+  };
+
   return (
-    <Card className="movie-card">
-      <Row gutter={[24, 8]}>
-        <Col className="col" xs={0} sm={0} md={id ? 12 : 24}>
-          <Table
-            rowKey="imdbID"
-            loading={isLoading}
-            columns={columns}
-            dataSource={data?.Search}
-            pagination={{
-              pageSize: 10,
-              showSizeChanger: false,
-              current: values.page,
-              total: parseInt(data?.totalResults || "0"),
-            }}
-            onChange={(p) =>
-              update({
-                ...values,
-                page: p.current,
-              })
-            }
-            rowSelection={{
-              selectedRowKeys: [id || ""],
-              renderCell: () => null,
-              columnTitle: <></>,
-            }}
-            onRow={(record) => {
-              return {
-                onClick: () =>
-                  navigate({
-                    pathname: Paths.MoviesDetail.replace(":id", record?.imdbID),
-                    search: location.search,
-                  }),
-              };
-            }}
-          />
-        </Col>
-        {id && (
-          <Col className="col" sm={24} md={12}>
-            <Suspense fallback={<Spin />}>
-              <MovieDetailsPage />
-            </Suspense>
-          </Col>
-        )}
-      </Row>
-    </Card>
+    <Table
+      rowKey="imdbID"
+      className="movie-list"
+      loading={isLoading}
+      columns={columns}
+      dataSource={data?.Search}
+      pagination={{
+        pageSize: PaginationDefaults.pageSize,
+        showSizeChanger: false,
+        current: values.page,
+        hideOnSinglePage: true,
+        total: parseInt(data?.totalResults || "0"),
+      }}
+      onChange={handlePaginationChange}
+      rowSelection={{
+        renderCell: () => null,
+        columnTitle: <></>,
+      }}
+      onRow={handleRowClick}
+    />
   );
 };
 

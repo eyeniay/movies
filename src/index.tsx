@@ -5,6 +5,7 @@ import { IntlProvider } from "react-intl";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import en from "translations/en";
 import App from "./App";
+import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,12 +15,20 @@ const queryClient = new QueryClient();
 
 root.render(
   <React.StrictMode>
-    <IntlProvider messages={en} locale="en" defaultLocale="en">
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </IntlProvider>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#ea5861",
+        },
+      }}
+    >
+      <IntlProvider messages={en} locale="en" defaultLocale="en">
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </QueryClientProvider>
+      </IntlProvider>
+    </ConfigProvider>
   </React.StrictMode>
 );

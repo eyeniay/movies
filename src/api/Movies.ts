@@ -8,7 +8,7 @@ export interface IMovieRes {
   totalResults?: string;
 }
 
-interface IMovie {
+export interface IMovie {
   Title: string;
   Year: string;
   Poster: string;

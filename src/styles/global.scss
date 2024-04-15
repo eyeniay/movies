@@ -32,26 +32,69 @@ body {
     background-color: $primary;
     color: $white;
     font-weight: 600;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        color: $secondary;
+      }
+      .sub-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: $white;
+      }
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      justify-content: end;
+      flex: 1;
+
+      .ant-input-group-wrapper,
+      .ant-picker,
+      .ant-select {
+        width: 180px;
+      }
+    }
   }
 
   .content {
     margin: 24px;
     padding: 8px;
 
-    .movie-card {
-      .col {
-        overflow: auto;
-
-        .poster {
-          display: flex;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
+    .movie-list {
       .ant-table-row {
         cursor: pointer;
       }
+
+      tr:hover > td {
+        background: $secondary;
+        color: $white;
+      }
     }
+
+    .poster {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.filter-drawer {
+  .ant-drawer-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }

@@ -1,5 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { Image, Descriptions, Skeleton, Space, Tag, Button } from "antd";
+import {
+  Image,
+  Descriptions,
+  Skeleton,
+  Space,
+  Tag,
+  Button,
+  Col,
+  Row,
+} from "antd";
 import moviesAPI from "api/Movies";
 import useTranslate from "hooks/useTranslate";
 import { ArrowLeft, Star, UsersRound } from "lucide-react";
@@ -18,72 +27,83 @@ const MovieDetailsPage = () => {
     enabled: !!id,
   });
 
+  const handleBack = () =>
+    navigate({
+      pathname: Paths.Movies,
+      search: location.search,
+    });
+
   return loadingRecord ? (
     <Skeleton active />
   ) : (
-    <Descriptions
-      title={
-        <Space>
-          <Button
-            type="primary"
-            icon={<ArrowLeft />}
-            onClick={() =>
-              navigate({
-                pathname: Paths.Movies,
-                search: location.search,
-              })
-            }
+    <Row gutter={[8, 8]}>
+      {record?.Poster && (
+        <Col className="poster" md={24} lg={8} xxl={4}>
+          <Image
+            preview={false}
+            src={record?.Poster}
+            fallback="https://placehold.co/300x400?text=No+Image"
           />
-          {record?.Title}
-        </Space>
-      }
-      column={1}
-      bordered
-      items={[
-        {
-          children: (
-            <div className="poster">
-              <Image width={200} src={record?.Poster} />
-            </div>
-          ),
-        },
-        {
-          label: locale("Plot"),
-          children: record?.Plot,
-        },
-        {
-          label: locale("Director"),
-          children: record?.Director,
-        },
-        {
-          label: locale("Cast"),
-          children: record?.Actors,
-        },
-        {
-          label: locale("Duration"),
-          children: record?.Runtime,
-        },
-        {
-          label: locale("Genre"),
-          children: record?.Genre,
-        },
-        {
-          label: locale("Rating"),
-          children: record?.imdbVotes && record?.imdbRating && (
+        </Col>
+      )}
+      <Col md={24} lg={16} xxl={20}>
+        <Descriptions
+          title={
             <Space>
-              <Tag>
-                <UsersRound size={10} />
-                {record?.imdbVotes}
-              </Tag>
-              <Tag>
-                <Star size={10} />
-                {record?.imdbRating}
-              </Tag>
+              <Button
+                type="primary"
+                icon={<ArrowLeft />}
+                onClick={handleBack}
+              />
+              {record?.Title}
             </Space>
-          ),
-        },
-      ]}
-    />
+          }
+          column={1}
+          bordered
+          items={[
+            {
+              label: locale("Plot"),
+              children: record?.Plot,
+            },
+            {
+              label: locale("Director"),
+              children: record?.Director,
+            },
+            {
+              label: locale("Cast"),
+              children: record?.Actors,
+            },
+            {
+              label: locale("Duration"),
+              children: record?.Runtime,
+            },
+            {
+              label: locale("Genre"),
+              children: record?.Genre,
+            },
+            {
+              label: locale("Year"),
+              children: record?.Year,
+            },
+            {
+              label: locale("Rating"),
+              children: record?.imdbVotes && record?.imdbRating && (
+                <Space>
+                  <Tag>
+                    <UsersRound size={10} />
+                    {record?.imdbVotes}
+                  </Tag>
+                  <Tag>
+                    <Star size={10} />
+                    {record?.imdbRating}
+                  </Tag>
+                </Space>
+              ),
+            },
+          ]}
+        />
+      </Col>
+    </Row>
   );
 };
 
