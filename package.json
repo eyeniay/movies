@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.28.11",
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "vercel": "^34.0.0"
   }
 }
