@@ -11,9 +11,31 @@ html {
 }
 
 body {
+  margin: 0;
   background-color: $white;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+.movies-layout {
+  background-color: $white;
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    font-weight: 600;
+  }
+
+  .content {
+    margin: 24px;
+    padding: 8px;
+  }
 }
