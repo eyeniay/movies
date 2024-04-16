@@ -8,6 +8,7 @@ export const Paths = {
   Home: "/",
   Movies: "/movies",
   MoviesDetail: "/movies/:id/details",
+  Error: "/error-occured",
 };
 
 export const PaginationDefaults = {

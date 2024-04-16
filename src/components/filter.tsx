@@ -1,11 +1,15 @@
 import { Button, DatePicker, Drawer, Grid, Input, Select } from "antd";
-import { IMovieFilter } from "api/Movies";
+import { IMovieFilter } from "api/types";
 import dayjs from "dayjs";
 import useTranslate from "hooks/useTranslate";
 import useUrlParams from "hooks/useUrlParams";
 import { SquareMenu } from "lucide-react";
 import { useState } from "react";
-import { DEFAULT_SEARCH_KEY, MovieTypes } from "utils/constants";
+import {
+  DEFAULT_SEARCH_KEY,
+  MovieTypes,
+  PaginationDefaults,
+} from "utils/constants";
 
 const Filters = () => {
   const { useBreakpoint } = Grid;
@@ -14,6 +18,7 @@ const Filters = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { values, update } = useUrlParams<IMovieFilter>({
     s: DEFAULT_SEARCH_KEY,
+    page: PaginationDefaults.page,
   });
 
   const Filter = () => (

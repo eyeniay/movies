@@ -2,16 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from "react-redux";
+import { ConfigProvider } from "antd";
+import store from "api/store";
 import en from "translations/en";
 import App from "./App";
-import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-
-const queryClient = new QueryClient();
 
 root.render(
   <React.StrictMode>
@@ -23,11 +22,11 @@ root.render(
       }}
     >
       <IntlProvider messages={en} locale="en" defaultLocale="en">
-        <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
           <BrowserRouter>
             <App />
           </BrowserRouter>
-        </QueryClientProvider>
+        </Provider>
       </IntlProvider>
     </ConfigProvider>
   </React.StrictMode>

@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import {
   Image,
   Descriptions,
@@ -9,7 +8,7 @@ import {
   Col,
   Row,
 } from "antd";
-import moviesAPI from "api/Movies";
+import { useGetMovieDetailsQuery } from "api/services/movies";
 import useTranslate from "hooks/useTranslate";
 import { ArrowLeft, Star, UsersRound } from "lucide-react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -20,12 +19,12 @@ const MovieDetailsPage = () => {
   const { locale } = useTranslate();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { data: record, isLoading: loadingRecord } = useQuery({
-    queryKey: ["movie", id],
-    queryFn: () => moviesAPI.findMovie(id as string),
-    enabled: !!id,
-  });
+  const { data, isLoading, isFetching, isError } = useGetMovieDetailsQuery(
+    id as string,
+    {
+      skip: !id,
+    }
+  );
 
   const handleBack = () =>
     navigate({
@@ -33,15 +32,19 @@ const MovieDetailsPage = () => {
       search: location.search,
     });
 
-  return loadingRecord ? (
+  if (isError) {
+    navigate(Paths.Error);
+  }
+
+  return isLoading || isFetching ? (
     <Skeleton active />
   ) : (
     <Row gutter={[8, 8]}>
-      {record?.Poster && (
+      {data?.Poster && (
         <Col className="poster" md={24} lg={8} xxl={4}>
           <Image
             preview={false}
-            src={record?.Poster}
+            src={data?.Poster}
             fallback="https://placehold.co/300x400?text=No+Image"
           />
         </Col>
@@ -55,7 +58,7 @@ const MovieDetailsPage = () => {
                 icon={<ArrowLeft />}
                 onClick={handleBack}
               />
-              {record?.Title}
+              {data?.Title}
             </Space>
           }
           column={1}
@@ -63,39 +66,39 @@ const MovieDetailsPage = () => {
           items={[
             {
               label: locale("Plot"),
-              children: record?.Plot,
+              children: data?.Plot,
             },
             {
               label: locale("Director"),
-              children: record?.Director,
+              children: data?.Director,
             },
             {
               label: locale("Cast"),
-              children: record?.Actors,
+              children: data?.Actors,
             },
             {
               label: locale("Duration"),
-              children: record?.Runtime,
+              children: data?.Runtime,
             },
             {
               label: locale("Genre"),
-              children: record?.Genre,
+              children: data?.Genre,
             },
             {
               label: locale("Year"),
-              children: record?.Year,
+              children: data?.Year,
             },
             {
               label: locale("Rating"),
-              children: record?.imdbVotes && record?.imdbRating && (
+              children: data?.imdbVotes && data?.imdbRating && (
                 <Space>
                   <Tag>
                     <UsersRound size={10} />
-                    {record?.imdbVotes}
+                    {data?.imdbVotes}
                   </Tag>
                   <Tag>
                     <Star size={10} />
-                    {record?.imdbRating}
+                    {data?.imdbRating}
                   </Tag>
                 </Space>
               ),

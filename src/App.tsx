@@ -8,6 +8,7 @@ import "styles/global.scss";
 const LazyMovies = React.lazy(() => import("pages/movies"));
 const LazyMovieDetailsPage = React.lazy(() => import("pages/movies/details"));
 const LazyNotFound = React.lazy(() => import("pages/404"));
+const LazyError = React.lazy(() => import("pages/500"));
 
 function App() {
   const AppLayouts = () => {
@@ -19,6 +20,7 @@ function App() {
             path={Paths.Home}
             element={<Navigate to={Paths.Movies} replace />}
           />
+          <Route path={Paths.Error} element={<LazyError />} />
           <Route path={Paths.Movies} element={<LazyMovies />} />
           <Route path={Paths.MoviesDetail} element={<LazyMovieDetailsPage />} />
         </Routes>

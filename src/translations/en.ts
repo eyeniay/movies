@@ -20,6 +20,7 @@ const EnLang = {
   BackHome: "Back Home",
   Filters: "Filters",
   NotFoundTitle: "Sorry, the page you visited does not exist",
+  ErrorOccured: "Sorry, something went wrong",
 };
 
 export default EnLang;
