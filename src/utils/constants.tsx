@@ -1,6 +1,6 @@
 import { FormattedMessage } from "react-intl";
 
-export const BASE_URL = "http://www.omdbapi.com/";
+export const BASE_URL = "https://www.omdbapi.com/";
 export const API_KEY = "11f1c5ff";
 export const DEFAULT_SEARCH_KEY = "Pokemon";
 
