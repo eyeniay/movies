@@ -5,8 +5,8 @@ import { Paths } from "utils/constants";
 import { Spin } from "antd";
 import "styles/global.scss";
 
-const LazyMovies = React.lazy(() => import("pages/movies"));
-const LazyMovieDetailsPage = React.lazy(() => import("pages/movies/details"));
+const LazyMovies = React.lazy(() => import("pages/movies/list"));
+const LazyMovieDetailsPage = React.lazy(() => import("pages/movies/detail"));
 const LazyNotFound = React.lazy(() => import("pages/404"));
 const LazyError = React.lazy(() => import("pages/500"));
 

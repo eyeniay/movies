@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`movie detail page tests should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-row css-dev-only-do-not-override-usln0u"
+    style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"
+  >
+    <div
+      class="ant-col poster ant-col-md-24 ant-col-lg-8 ant-col-xxl-4 css-dev-only-do-not-override-usln0u"
+      style="padding-left: 4px; padding-right: 4px;"
+    >
+      <div
+        class="ant-image css-dev-only-do-not-override-usln0u"
+      >
+        <img
+          class="ant-image-img css-dev-only-do-not-override-usln0u"
+          src="https://m.media-amazon.com/images/M/MV5BMDkxNzRmNDYtMDY0OS00N2JhLTkzZWUtMWE3MzZkNDk1MmJiXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_SX300.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="ant-col ant-col-md-24 ant-col-lg-16 ant-col-xxl-20 css-dev-only-do-not-override-usln0u"
+      style="padding-left: 4px; padding-right: 4px;"
+    >
+      <div
+        class="ant-descriptions ant-descriptions-bordered css-dev-only-do-not-override-usln0u"
+      >
+        <div
+          class="ant-descriptions-header"
+        >
+          <div
+            class="ant-descriptions-title"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-usln0u ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-usln0u ant-btn-primary ant-btn-icon-only"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="lucide lucide-arrow-left "
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m12 19-7-7 7-7"
+                      />
+                      <path
+                        d="M19 12H5"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                Pokémon: Detective Pikachu
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-descriptions-view"
+        >
+          <table>
+            <tbody>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Plot
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    In a world where people collect Pokémon to do battle, a boy comes across an intelligent talking Pikachu who seeks to be a detective.
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Director
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    Rob Letterman
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Cast
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    Ryan Reynolds, Justice Smith, Kathryn Newton
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Duration
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    104 min
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Genre
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    Action, Adventure, Comedy
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Year
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    2019
+                  </span>
+                </td>
+              </tr>
+              <tr
+                class="ant-descriptions-row"
+              >
+                <th
+                  class="ant-descriptions-item-label"
+                  colspan="1"
+                >
+                  <span>
+                    Rating
+                  </span>
+                </th>
+                <td
+                  class="ant-descriptions-item-content"
+                  colspan="1"
+                >
+                  <span>
+                    <div
+                      class="ant-space css-dev-only-do-not-override-usln0u ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small"
+                    >
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-tag css-dev-only-do-not-override-usln0u"
+                        >
+                          <svg
+                            class="lucide lucide-users-round "
+                            fill="none"
+                            height="10"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 21a8 8 0 0 0-16 0"
+                            />
+                            <circle
+                              cx="10"
+                              cy="8"
+                              r="5"
+                            />
+                            <path
+                              d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"
+                            />
+                          </svg>
+                          181,696
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-tag css-dev-only-do-not-override-usln0u"
+                        >
+                          <svg
+                            class="lucide lucide-star "
+                            fill="none"
+                            height="10"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <polygon
+                              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                            />
+                          </svg>
+                          6.5
+                        </span>
+                      </div>
+                    </div>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

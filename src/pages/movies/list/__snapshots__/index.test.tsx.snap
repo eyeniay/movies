@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`movies list page tests should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper movie-list css-dev-only-do-not-override-usln0u"
+  >
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-usln0u"
+    >
+      <div>
+        <div
+          aria-busy="true"
+          aria-live="polite"
+          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-usln0u"
+        >
+          <span
+            class="ant-spin-dot ant-spin-dot-spin"
+          >
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-spin-container ant-spin-blur"
+      >
+        <div
+          class="ant-table css-dev-only-do-not-override-usln0u"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-content"
+            >
+              <table
+                style="table-layout: auto;"
+              >
+                <colgroup>
+                  <col
+                    class="ant-table-selection-col"
+                  />
+                </colgroup>
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell ant-table-selection-column"
+                      scope="col"
+                    />
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      IMDB ID
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Name
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                      style="text-align: center;"
+                    >
+                      Release Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="tt5884052"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-selection-column"
+                    />
+                    <td
+                      class="ant-table-cell"
+                    >
+                      tt5884052
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Pokémon: Detective Pikachu
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                      style="text-align: center;"
+                    >
+                      2019
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
